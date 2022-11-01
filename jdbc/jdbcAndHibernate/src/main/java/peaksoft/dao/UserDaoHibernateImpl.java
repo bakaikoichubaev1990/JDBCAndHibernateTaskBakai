@@ -50,6 +50,8 @@ public class UserDaoHibernateImpl implements UserDao {
 
             session.createNativeQuery("drop table if exists users;").executeUpdate();
 
+            System.out.println("Table drop successfully");
+
             session.getTransaction().commit();
             session.close();
         } catch (HibernateException e) {
@@ -66,6 +68,8 @@ public class UserDaoHibernateImpl implements UserDao {
             session.beginTransaction();
 
             session.save(new User(name, lastName, age));
+
+            System.out.println("user with name " + name + "saved successfully");
 
             session.getTransaction().commit();
             session.close();
