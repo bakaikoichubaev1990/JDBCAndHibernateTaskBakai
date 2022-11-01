@@ -123,6 +123,8 @@ public class UserDaoHibernateImpl implements UserDao {
 
             System.out.println("Table truncate successfully");
 
+            System.out.println("Hello world");
+
             session.getTransaction().commit();
             session.close();
         } catch (HibernateException e) {
